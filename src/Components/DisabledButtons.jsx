@@ -1,16 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
-
 import React, { useEffect, useState } from "react";
 import CustomSelect from "./Custom";
-
-// import { faBitcoinSign } from "@fortawesome/free-solid-svg-icons";
-// import { faClipboard, faFaceAwesome } from "@fortawesome/free-solid-svg-icons";
-// import { faClipboard as farClipboard } from "@fortawesome/free-regular-svg-icons";
-
 import axios from "axios";
-// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
 function FormDisabledExample() {
   const [currentValue, setCurrentValue] = useState(0);
@@ -44,38 +37,39 @@ function FormDisabledExample() {
     try {
       const response = await axios.request(
         // `https://api.coingecko.com/api/v3/coins/${coinname}`
-        ` https://api.coingecko.com/api/v3/simple/price?ids=${coinname}&vs_currencies=inr`
+        `https://api.coingecko.com/api/v3/simple/price?ids=${coinname}&vs_currencies=inr`
       );
       // const response = await axios.request(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false`);
       // setCurrentCoinPrice("");
-      console.log(response.data[coinname]);
+      // console.log(response.data[coinname]);
       let x = response.data[coinname];
       setCurrentCoinPrice(x.inr);
       setCurrentValue(x.inr)
-      console.log();
       // setCurrentCoinPrice(response.data[coinname])
     } catch (error) {
       console.error(error);
     }
   }
-
+  console.log("currentCoinPrice",currentCoinPrice);
+      console.log("amountYouWantToInvest",amountYouWantToInvest);
   console.log("current price of selected crypto", currentCoinPrice);
+
   const handleChange = (option) => {
     // console.log("consoling option",option)
     setCoinname(option.value);
   };
 
-  const amountToInvest = (e)=>{
-    setAmountYouWantToInvest(e.target.value);
-    console.log("69",amountYouWantToInvest)
-    console.log("70",currentCoinPrice)
-    const cryptoUnit = Number(+amountYouWantToInvest / +currentCoinPrice);
+  let amountToInvest = (e)=>{
+    setAmountYouWantToInvest(+e.target.value);
+    // console.log("69",amountYouWantToInvest)
+    // console.log("70",currentCoinPrice)
+    let cryptoUnit = Number(amountYouWantToInvest/currentCoinPrice);
      setCoins(cryptoUnit);
   }
 
   useEffect(() => {
     getData(coinname);
-    console.log("obj",obj[coinname])
+    // console.log("obj",obj[coinname])
   }, [coinname]);
 
   return (
