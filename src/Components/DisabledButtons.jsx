@@ -60,11 +60,13 @@ function FormDisabledExample() {
   };
 
   let amountToInvest = (e)=>{
-    setAmountYouWantToInvest(+e.target.value);
-    // console.log("69",amountYouWantToInvest)
-    // console.log("70",currentCoinPrice)
-    let cryptoUnit = Number(amountYouWantToInvest/currentCoinPrice);
-     setCoins(cryptoUnit);
+    let a = e.target.value
+    // console.log("66",a/currentCoinPrice);
+    let cryptoUnit = Number(a/currentCoinPrice);
+    // console.log("cryptoUnit",cryptoUnit)
+    // console.log("coins",coins)
+    setAmountYouWantToInvest(Number(a));
+    setCoins(cryptoUnit);
   }
 
   useEffect(() => {
