@@ -14,6 +14,31 @@
 
 <br/>
 <br/>
+ <hr/>
+
+ ## Features Present
+ <br/>
+
+ 1. The current value of the selected crypto  is shown in the first page (on the top right side) is real-time.
+
+ 2. Using ```coingecko``` Api to fetch the Real Time Data, Not using Binance API because it was not available to use without Verification.
+
+ 3. When the dropdown list is clicked on to select the different Cryptos, the pop up is appearing. And the search bar in the pop up is functional.
+
+
+ 4. The second input box is disabled, and it shows the estimate amount of token the user will get once he enter the amount of INR he is going to invest.
+
+
+ 5. The second input box is dynamically changing as soon as the user starts to enter data in the first input box.
+
+ 6. Rest of the buttons and navbar in the page is not functional.
+
+ 7. This Project is [Deployed](https://assignment-nu-eight.vercel.app/) on Vercel and is live.
+
+ <hr/>
+
+
+
 
 ## Steps To Clone it and Run In your Local Machine
 
