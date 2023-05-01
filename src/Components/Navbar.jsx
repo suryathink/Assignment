@@ -1,12 +1,15 @@
 import { Button } from "bootstrap";
 import React from "react";
-import TypesExample from './Button'
+import TypesExample from "./Button";
 
 const Navbar = () => {
   return (
     <div className="container">
       <div className="logo">
-      <img src="https://neofi.app/static/img/brand_new.svg" alt="NeoFi Logo"/>
+        <img
+          src="https://neofi.app/static/img/brand_new.svg"
+          alt="NeoFi Logo"
+        />
       </div>
       <div className="mainContent">
         <div>Trade</div>
@@ -15,7 +18,7 @@ const Navbar = () => {
         <div>About</div>
       </div>
       <div className="connectWallet">
-      <TypesExample/>
+        <TypesExample />
       </div>
     </div>
   );

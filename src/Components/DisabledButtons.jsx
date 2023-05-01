@@ -5,24 +5,22 @@ import React, { useEffect, useState } from "react";
 import CustomSelect from "./Custom";
 import axios from "axios";
 
-
 function FormDisabledExample() {
   const [currentValue, setCurrentValue] = useState(0);
   const [coinname, setCoinname] = useState("");
   const [currentCoinPrice, setCurrentCoinPrice] = useState(0);
   const [amountYouWantToInvest, setAmountYouWantToInvest] = useState();
   const [coins, setCoins] = useState();
-  
-  
-   const obj = {
-    ethereum:"ETH",
-    bitcoin:"BTC",
-   'matic-network':"MATIC",
-    binancecoin:"BNB",
-    ripple:"XRP",
-    solana:"SOL"
-   }
- 
+
+  const obj = {
+    ethereum: "ETH",
+    bitcoin: "BTC",
+    "matic-network": "MATIC",
+    binancecoin: "BNB",
+    ripple: "XRP",
+    solana: "SOL",
+  };
+
   const options = [
     { value: "ethereum", label: "Ethereum" },
     { value: "bitcoin", label: "Bitcoin" },
@@ -45,14 +43,14 @@ function FormDisabledExample() {
       // console.log(response.data[coinname]);
       let x = response.data[coinname];
       setCurrentCoinPrice(x.inr);
-      setCurrentValue(x.inr)
+      setCurrentValue(x.inr);
       // setCurrentCoinPrice(response.data[coinname])
     } catch (error) {
       console.error(error);
     }
   }
-  console.log("currentCoinPrice",currentCoinPrice);
-      console.log("amountYouWantToInvest",amountYouWantToInvest);
+  console.log("currentCoinPrice", currentCoinPrice);
+  console.log("amountYouWantToInvest", amountYouWantToInvest);
   console.log("current price of selected crypto", currentCoinPrice);
 
   const handleChange = (option) => {
@@ -60,15 +58,15 @@ function FormDisabledExample() {
     setCoinname(option.value);
   };
 
-  let amountToInvest = (e)=>{
-    let a = e.target.value
+  let amountToInvest = (e) => {
+    let a = e.target.value;
     // console.log("66",a/currentCoinPrice);
-    let cryptoUnit = Number(a/currentCoinPrice);
+    let cryptoUnit = Number(a / currentCoinPrice);
     // console.log("cryptoUnit",cryptoUnit)
     // console.log("coins",coins)
     setAmountYouWantToInvest(Number(a));
     setCoins(cryptoUnit);
-  }
+  };
 
   useEffect(() => {
     getData(coinname);
@@ -97,28 +95,61 @@ function FormDisabledExample() {
             />
           </Form.Group>
 
-          <Form.Group  className="mb-3">
+          <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">
               Amount you want to invest
             </Form.Label>
-            <div style={{display:"flex",position:"relative",justifyContent:"space-between",alignItems:"center",border:"1px solid #d3caca"}}>
-            <Form.Control style={{border:"none",outline:"none",boxShadow:"none"}} id="disabledTextInput" placeholder="0.00" value={amountYouWantToInvest} onChange={amountToInvest} />
-              <p style={{verticalAlign:"center", position:"absolute",right:3,top:"10%"}}> INR</p>
+            <div
+              style={{
+                display: "flex",
+                position: "relative",
+                justifyContent: "space-between",
+                alignItems: "center",
+                border: "1px solid #d3caca",
+              }}
+            >
+              <Form.Control
+                style={{ border: "none", outline: "none", boxShadow: "none" }}
+                id="disabledTextInput"
+                placeholder="0.00"
+                value={amountYouWantToInvest}
+                onChange={amountToInvest}
+              />
+              <p
+                style={{
+                  verticalAlign: "center",
+                  position: "absolute",
+                  right: 3,
+                  top: "10%",
+                }}
+              >
+                {" "}
+                INR
+              </p>
             </div>
           </Form.Group>
 
-
           <Form.Group className="mb-3">
             <Form.Label htmlFor="disabledTextInput">
-             { `Estimate Number of ${coinname.length==0 ? "Coin" : obj[coinname]} you will get`}
+              {`Estimate Number of ${
+                coinname.length == 0 ? "Coin" : obj[coinname]
+              } you will get`}
             </Form.Label>
-            <Form.Control id="disabledTextInput" placeholder="0.00" value={coins} disabled ={ amountYouWantToInvest > 0 ? false: true} />
+            <Form.Control
+              id="disabledTextInput"
+              placeholder="0.00"
+              value={coins}
+              disabled={amountYouWantToInvest > 0 ? false : true}
+            />
           </Form.Group>
-        
-          <Button style={{width:"100%",borderRadius:"25px"}} size="lg" type="submit">Buy</Button>
 
-   
-
+          <Button
+            style={{ width: "100%", borderRadius: "25px" }}
+            size="lg"
+            type="submit"
+          >
+            Buy
+          </Button>
         </fieldset>
       </Form>
     </div>

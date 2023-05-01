@@ -1,9 +1,9 @@
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function TypesExample() {
   return (
     <>
-      <Button variant="primary">Connect Wallet</Button>{' '}
+      <Button variant="primary">Connect Wallet</Button>{" "}
     </>
   );
 }
