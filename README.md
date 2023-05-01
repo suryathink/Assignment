@@ -23,7 +23,7 @@
 
  2. Using ```coingecko``` Api to fetch the Real Time Data, Not using Binance API because it was not available to use without Verification.
 
- 3. When the dropdown list is clicked on to select the different Cryptos, the pop up is appearing. And the search bar in the pop up is functional.
+ 3. When the dropdown list is clicked on to select the different Cryptos, the dropdown is appearing. And the search bar in the dropdown is functional.
 
 
  4. The second input box is disabled, and it shows the estimate amount of token the user will get once he enter the amount of INR he is going to invest.
