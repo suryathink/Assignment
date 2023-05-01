@@ -5,7 +5,9 @@
 ### What it is ?
 <br/>
 
-![Image](../Assignment/src/Assets/crypto-calculator-image.png)
+<img src="../Assignment/src/Assets/crypto-calculator-image.png" width="100%"/>
+
+<!-- ![Image](../Assignment/src/Assets/crypto-calculator-image.png) -->
 
 ### Its an Crypto Calculator that Calculates how much Particular Crypto Units You Will Receive on the Money You want to Invest.
 
