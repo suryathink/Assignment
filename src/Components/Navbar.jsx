@@ -12,10 +12,10 @@ const Navbar = () => {
         />
       </div>
       <div className="mainContent">
-        <div>Trade</div>
-        <div>Earn</div>
-        <div>Support</div>
-        <div>About</div>
+        <div onClick="https://github.com/suryathink/">Trade</div>
+        <div  onClick="https://github.com/suryathink/">Earn</div>
+        <div  onClick="https://github.com/suryathink/">Support</div>
+        <div  onClick="https://github.com/suryathink/">About</div>
       </div>
       <div className="connectWallet">
         <TypesExample />
